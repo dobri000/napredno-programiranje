@@ -4,6 +4,7 @@
  */
 package rs.volleybox.frontend.communication;
 
+import java.awt.HeadlessException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -14,6 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
+
+import com.fasterxml.jackson.core.type.TypeReference;
 
 import rs.volleybox.common_lib.domain.Admin;
 import rs.volleybox.common_lib.domain.Country;
@@ -27,6 +30,7 @@ import rs.volleybox.common_lib.domain.Team;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Request;
 import rs.volleybox.common_lib.transfer.Response;
+import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 import rs.volleybox.common_lib.enumeration.Operation;
 import rs.volleybox.frontend.session.Session;
 
@@ -62,7 +66,11 @@ public class Communication {
 
     public void sendRequest(Operation operation, Object object) {
         try {
-            out.writeObject(new Request(operation, object));
+        	Request request = new Request(operation, object);
+        	String jsonRequest = JsonSerializationUtils.serializeToJson(request, new TypeReference<Request>() {
+			});
+        	System.out.println(jsonRequest);
+            out.writeObject(jsonRequest);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Connection error");
                 System.exit(0);
@@ -72,9 +80,12 @@ public class Communication {
     public Response getResponse() {
         Response response = null;
         try {
-            response = (Response) in.readObject();
+        	String jsonResponse = (String) in.readObject();
+            response = JsonSerializationUtils.deserializeFromJson(jsonResponse, new TypeReference<Response>() {
+			});
             if(response.getServerResponse() == ServerResponse.ERROR) {
-                JOptionPane.showMessageDialog(null, (String) response.getObject());
+            	JOptionPane.showMessageDialog(null, JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<String>() {
+				}));
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Connection error");
@@ -119,7 +130,13 @@ public class Communication {
         sendRequest(Operation.GET_ALL_COUNTRIES, null);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<Country>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<Country>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -141,7 +158,13 @@ public class Communication {
         sendRequest(Operation.SEARCH_HALLS, search);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<Hall>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<Hall>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -149,7 +172,13 @@ public class Communication {
         sendRequest(Operation.SEARCH_PLAYERS, search);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<Player>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<Player>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -157,7 +186,13 @@ public class Communication {
         sendRequest(Operation.SEARCH_STAFF_MEMBERS, search);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<StaffMember>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<StaffMember>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -184,7 +219,13 @@ public class Communication {
         sendRequest(Operation.SEARCH_TEAMS, search);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<Team>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<Team>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -192,7 +233,13 @@ public class Communication {
         sendRequest(Operation.GET_ALL_TEAMS, null);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<Team>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<Team>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -215,7 +262,13 @@ public class Communication {
         sendRequest(Operation.GET_ALL_PLAYERS, null);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<Player>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<Player>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -223,7 +276,13 @@ public class Communication {
         sendRequest(Operation.GET_ALL_STAFF_MEMBERS, null);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<StaffMember>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<StaffMember>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -245,7 +304,13 @@ public class Communication {
         sendRequest(Operation.GET_ALL_SEASONS, null);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<Season>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<Season>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -253,7 +318,13 @@ public class Communication {
         sendRequest(Operation.GET_PLAYER_ENGAGEMENTS, player);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<PlayerEngagement>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<PlayerEngagement>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -275,7 +346,13 @@ public class Communication {
         sendRequest(Operation.GET_PLAYER_ENGAGEMENTS_OF_TEAM, team);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<PlayerEngagement>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<PlayerEngagement>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -283,7 +360,13 @@ public class Communication {
         sendRequest(Operation.GET_STAFF_MEMBER_ENGAGEMENTS_OF_TEAM, team);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<StaffMemberEngagement>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<StaffMemberEngagement>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -312,7 +395,13 @@ public class Communication {
         sendRequest(Operation.GET_STAFF_MEMBER_ENGAGEMENTS, staffMember);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<StaffMemberEngagement>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<StaffMemberEngagement>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return new ArrayList<>();
     }
 
@@ -320,7 +409,13 @@ public class Communication {
         sendRequest(Operation.GET_ALL_HALLS, null);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK))
-            return (List<Hall>) response.getObject();
+			try {
+				return JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<List<Hall>>() {
+				});
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         return null;
     }
 
@@ -328,7 +423,16 @@ public class Communication {
         sendRequest(Operation.LOGOUT, admin);
         Response response = getResponse();
         if(response.getServerResponse().equals(ServerResponse.OK)){
-            JOptionPane.showMessageDialog(null, (String) response.getObject());
+            try {
+				JOptionPane.showMessageDialog(null, JsonSerializationUtils.convertValue(response.getObject(), new TypeReference<String>() {
+				}));
+			} catch (HeadlessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             Session.getInstance().setAdmin(null);
             return true;
         } else {
