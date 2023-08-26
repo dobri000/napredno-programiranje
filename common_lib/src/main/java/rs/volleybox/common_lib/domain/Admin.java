@@ -35,6 +35,12 @@ public class Admin implements Serializable{
     }
 
     public void setUsername(String username) {
+    	if(username == null) {
+    		throw new NullPointerException("Username cannot be null");
+    	}
+    	if(username.isEmpty()) {
+    		throw new IllegalArgumentException("Username cannot be empty");
+    	}
         this.username = username;
     }
 
@@ -43,6 +49,12 @@ public class Admin implements Serializable{
     }
 
     public void setPassword(String password) {
+    	if(password == null) {
+    		throw new NullPointerException("Password cannot be null");
+    	}
+    	if(password.isEmpty()) {
+    		throw new IllegalArgumentException("Password cannot be empty");
+    	}
         this.password = password;
     }
 

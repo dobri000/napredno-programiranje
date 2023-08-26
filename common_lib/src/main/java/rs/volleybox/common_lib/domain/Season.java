@@ -43,6 +43,9 @@ public class Season implements Serializable {
     }
 
     public void setStartYear(int startYear) {
+    	if(startYear < 0) {
+    		throw new IllegalArgumentException("Start year cannot be less then zero");
+    	}
         this.startYear = startYear;
     }
 
@@ -51,6 +54,9 @@ public class Season implements Serializable {
     }
 
     public void setEndYear(int endYear) {
+    	if(endYear < 0) {
+    		throw new IllegalArgumentException("End year cannot be less then zero");
+    	}
         this.endYear = endYear;
     }
 

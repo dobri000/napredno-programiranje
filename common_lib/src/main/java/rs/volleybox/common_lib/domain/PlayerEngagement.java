@@ -34,6 +34,9 @@ public class PlayerEngagement implements Serializable{
     }
 
     public void setPlayer(Player player) {
+    	if(player == null) {
+    		throw new NullPointerException("Player cannot be null");
+    	}
         this.player = player;
     }
 
@@ -42,6 +45,9 @@ public class PlayerEngagement implements Serializable{
     }
 
     public void setRoster(Roster roster) {
+    	if(roster == null) {
+    		throw new NullPointerException("Roster cannot be null");
+    	}
         this.roster = roster;
     }
 
@@ -50,6 +56,9 @@ public class PlayerEngagement implements Serializable{
     }
 
     public void setPosition(PlayerPosition position) {
+    	if(position == null) {
+    		throw new NullPointerException("Position cannot be null");
+    	}
         this.position = position;
     }
 
@@ -58,6 +67,9 @@ public class PlayerEngagement implements Serializable{
     }
 
     public void setNumber(int number) {
+    	if(number < 0) {
+    		throw new IllegalArgumentException("Number cannot be less then zero");
+    	}
         this.number = number;
     }
 

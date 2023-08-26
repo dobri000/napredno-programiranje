@@ -33,6 +33,9 @@ public class StaffMemberEngagement implements Serializable{
     
 
     public void setStaffMember(StaffMember staffMember) {
+    	if(staffMember == null) {
+    		throw new NullPointerException("Staff member cannot be null");
+    	}
         this.staffMember = staffMember;
     }
 
@@ -41,6 +44,9 @@ public class StaffMemberEngagement implements Serializable{
     }
 
     public void setRoster(Roster roster) {
+    	if(roster == null) {
+    		throw new NullPointerException("Roster cannot be null");
+    	}
         this.roster = roster;
     }
 
@@ -49,6 +55,9 @@ public class StaffMemberEngagement implements Serializable{
     }
 
     public void setPosition(StaffMemberPosition position) {
+    	if(position == null) {
+    		throw new NullPointerException("Position cannot be null");
+    	}
         this.position = position;
     }
 
