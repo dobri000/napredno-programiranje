@@ -7,11 +7,14 @@ package rs.volleybox.backend.so.impl;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import rs.volleybox.backend.database.DBBroker;
 import rs.volleybox.backend.so.SOInterface;
 import rs.volleybox.common_lib.domain.Team;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
+import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 
 /**
  *
@@ -22,7 +25,8 @@ public class SOUpdateTeam implements SOInterface {
     @Override
     public Response execute(Object object) throws IOException {
         try {
-            Team team = (Team) object;
+            Team team = JsonSerializationUtils.convertValue(object, new TypeReference<Team>() {
+			});
             DBBroker.getInstance().updateTeam(team);
             return new Response(ServerResponse.OK, null);
         } catch (SQLException ex) {

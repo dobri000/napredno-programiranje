@@ -7,11 +7,14 @@ package rs.volleybox.backend.so.impl;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import rs.volleybox.backend.database.DBBroker;
 import rs.volleybox.backend.so.SOInterface;
 import rs.volleybox.common_lib.domain.Admin;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
+import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 
 /**
  *
@@ -22,7 +25,8 @@ public class SOLogin implements SOInterface {
     @Override
     public Response execute(Object object) throws IOException {
         try {
-            Admin admin = (Admin) object;
+            Admin admin = JsonSerializationUtils.convertValue(object, new TypeReference<Admin>() {
+			});
             String success = DBBroker.getInstance().login(admin);
             if(success.equals("Correct credentials")){
                 return new Response(ServerResponse.OK, success);

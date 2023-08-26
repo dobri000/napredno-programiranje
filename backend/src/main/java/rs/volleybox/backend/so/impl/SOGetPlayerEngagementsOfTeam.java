@@ -8,12 +8,16 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import rs.volleybox.backend.database.DBBroker;
 import rs.volleybox.backend.so.SOInterface;
+import rs.volleybox.common_lib.domain.Player;
 import rs.volleybox.common_lib.domain.PlayerEngagement;
 import rs.volleybox.common_lib.domain.Team;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
+import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 
 /**
  *
@@ -24,7 +28,8 @@ public class SOGetPlayerEngagementsOfTeam implements SOInterface {
     @Override
     public Response execute(Object object) throws IOException {
         try {
-            Team team = (Team) object;
+            Team team = JsonSerializationUtils.convertValue(object, new TypeReference<Team>() {
+			});
             List<PlayerEngagement> engagements = DBBroker.getInstance().getPlayerEngagementsOfTeam(team);
             return new Response(ServerResponse.OK.OK, engagements);
         } catch (SQLException ex) {
