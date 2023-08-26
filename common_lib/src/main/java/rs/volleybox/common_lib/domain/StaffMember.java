@@ -33,6 +33,9 @@ public class StaffMember implements Serializable{
         this.birthdate = birthdate;
         this.nationality = nationality;
     }
+    
+    public StaffMember() {
+    }
 
     public int getStaffMemberId() {
         return staffMemberId;

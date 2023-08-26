@@ -13,7 +13,9 @@ import java.util.Objects;
  */
 public class Admin implements Serializable{
     
-    private String username;
+    
+
+	private String username;
     private String password;
 
     public Admin(String username, String password) {
@@ -24,6 +26,9 @@ public class Admin implements Serializable{
     public Admin(String username) {
         this.username = username;
     }
+    
+    public Admin() {
+	}
 
     public String getUsername() {
         return username;

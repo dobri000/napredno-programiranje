@@ -16,6 +16,10 @@ public class Request implements Serializable {
     private Operation operation;
     private Object object;
 
+    public Request() {
+    	
+    }
+    
     public Request(Operation operation, Object object) {
         this.operation = operation;
         this.object = object;

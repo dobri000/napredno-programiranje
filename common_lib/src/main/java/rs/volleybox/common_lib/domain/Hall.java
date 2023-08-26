@@ -26,6 +26,9 @@ public class Hall implements Serializable{
         this.hallName = name;
         this.address = address;
     }
+    
+    public Hall() {
+    }
 
     public int getHallId() {
         return hallId;

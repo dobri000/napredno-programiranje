@@ -33,6 +33,9 @@ public class Team implements Serializable{
         this.country = country;
         this.hall = hall;
     }
+    
+    public Team() {
+    }
 
     public int getTeamId() {
         return teamId;

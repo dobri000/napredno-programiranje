@@ -19,6 +19,9 @@ public class Response implements Serializable{
         this.serverResponse = serverResponse;
         this.object = object;
     }
+    
+    public Response() {
+    }
 
     public ServerResponse getServerResponse() {
         return serverResponse;

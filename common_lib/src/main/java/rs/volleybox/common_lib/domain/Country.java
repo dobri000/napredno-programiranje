@@ -23,6 +23,9 @@ public class Country implements Serializable{
     public Country(String name) {
         this.countryName = name;
     }
+    
+    public Country() {
+    }
 
     public int getCountryId() {
         return countryId;
