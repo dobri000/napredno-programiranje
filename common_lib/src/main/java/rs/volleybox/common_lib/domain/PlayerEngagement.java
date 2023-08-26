@@ -25,6 +25,9 @@ public class PlayerEngagement implements Serializable{
         this.position = position;
         this.number = number;
     }
+    
+    public PlayerEngagement() {
+    }
 
     public Player getPlayer() {
         return player;

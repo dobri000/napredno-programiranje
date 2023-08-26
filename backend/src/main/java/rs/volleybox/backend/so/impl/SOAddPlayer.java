@@ -12,11 +12,14 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import rs.volleybox.backend.database.DBBroker;
 import rs.volleybox.backend.so.SOInterface;
 import rs.volleybox.common_lib.domain.Player;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
+import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 
 
 
@@ -29,7 +32,8 @@ public class SOAddPlayer implements SOInterface {
     @Override
     public Response execute(Object object) throws IOException {
         try {
-            Player player = (Player) object;
+            Player player = JsonSerializationUtils.convertValue(object, new TypeReference<Player>() {
+			});
             DBBroker.getInstance().addPlayer(player);
             return new Response(ServerResponse.OK, null);
         } catch (SQLException ex) {

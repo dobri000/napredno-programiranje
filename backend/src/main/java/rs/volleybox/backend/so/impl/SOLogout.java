@@ -6,11 +6,15 @@ package rs.volleybox.backend.so.impl;
 
 import java.io.IOException;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import rs.volleybox.backend.database.DBBroker;
 import rs.volleybox.backend.so.SOInterface;
 import rs.volleybox.common_lib.domain.Admin;
+import rs.volleybox.common_lib.domain.Player;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
+import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 
 /**
  *
@@ -20,7 +24,8 @@ public class SOLogout implements SOInterface {
 
     @Override
     public Response execute(Object object) throws IOException {
-        Admin admin = (Admin) object;
+        Admin admin = JsonSerializationUtils.convertValue(object, new TypeReference<Admin>() {
+		});
         boolean success = DBBroker.getInstance().logout(admin);
         if(success) {
             return new Response(ServerResponse.OK, "Successfully logged out");

@@ -27,6 +27,9 @@ public class Roster implements Serializable {
         this.team = team;
         this.season = season;
     }
+    
+    public Roster() {
+    }
 
     public Team getTeam() {
         return team;

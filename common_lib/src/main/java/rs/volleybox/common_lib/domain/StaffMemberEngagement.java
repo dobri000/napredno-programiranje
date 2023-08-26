@@ -23,10 +23,14 @@ public class StaffMemberEngagement implements Serializable{
         this.roster = roster;
         this.position = position;
     }
+    
+    public StaffMemberEngagement() {
+    }
 
     public StaffMember getStaffMember() {
         return staffMember;
     }
+    
 
     public void setStaffMember(StaffMember staffMember) {
         this.staffMember = staffMember;

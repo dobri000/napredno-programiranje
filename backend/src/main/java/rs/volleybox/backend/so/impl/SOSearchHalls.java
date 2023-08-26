@@ -8,11 +8,15 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import rs.volleybox.backend.database.DBBroker;
 import rs.volleybox.backend.so.SOInterface;
 import rs.volleybox.common_lib.domain.Hall;
+import rs.volleybox.common_lib.domain.Player;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
+import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 
 /**
  *
@@ -23,7 +27,8 @@ public class SOSearchHalls implements SOInterface {
     @Override
     public Response execute(Object object) throws IOException {
         try {
-            String search = (String) object;
+            String search = JsonSerializationUtils.convertValue(object, new TypeReference<String>() {
+			});
             List<Hall> halls = DBBroker.getInstance().findHallsSearch(search);
             return new Response(ServerResponse.OK, halls);
         } catch (SQLException ex) {

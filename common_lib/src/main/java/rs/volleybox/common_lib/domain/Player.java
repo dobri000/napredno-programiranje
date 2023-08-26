@@ -49,6 +49,9 @@ public class Player implements Serializable{
         this.dominantHand = dominantHand;
         this.nationality = nationality;
     }
+    
+    public Player() {
+    }
 
     public int getPlayerId() {
         return playerId;

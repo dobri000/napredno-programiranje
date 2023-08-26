@@ -11,6 +11,8 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import rs.volleybox.backend.server.Server;
 import rs.volleybox.backend.so.SOInterface;
 import rs.volleybox.backend.so.impl.SOAddHall;
@@ -46,6 +48,7 @@ import rs.volleybox.backend.so.impl.SOUpdateStaffMember;
 import rs.volleybox.backend.so.impl.SOUpdateTeam;
 import rs.volleybox.common_lib.transfer.Request;
 import rs.volleybox.common_lib.transfer.Response;
+import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 import rs.volleybox.common_lib.enumeration.Operation;
 
 /**
@@ -69,7 +72,11 @@ public class ClientThread extends Thread {
     public void run() {
         while (status) {
             try {
-                Request request = (Request) in.readObject();
+            	String jsonRequest = (String) in.readObject();
+            	System.out.println(jsonRequest);
+                Request request = JsonSerializationUtils.deserializeFromJson(jsonRequest, new TypeReference<Request>() {
+				});
+                System.out.println(request);
                 Operation operation = request.getOperation();
                 SOInterface so = null;
                 switch (operation) {
@@ -170,9 +177,14 @@ public class ClientThread extends Thread {
                         break;
                 }
                 Response response = so.execute(request.getObject());
-                if(status)
-                    out.writeObject(response);
+                if(status) {
+                	String jsonResponse = JsonSerializationUtils.serializeToJson(response, new TypeReference<Response>() {
+					});
+                	out.writeObject(jsonResponse);
+                }
+                    
             } catch (IOException ex) {
+            	ex.printStackTrace();
                 status = false;
                 terminate();
                 interrupt();

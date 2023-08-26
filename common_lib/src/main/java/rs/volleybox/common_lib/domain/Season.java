@@ -26,6 +26,9 @@ public class Season implements Serializable {
         this.startYear = startYear;
         this.endYear = endYear;
     }
+    
+    public Season() {
+    }
 
     public int getSeasonId() {
         return seasonId;

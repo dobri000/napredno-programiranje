@@ -7,11 +7,15 @@ package rs.volleybox.backend.so.impl;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+
 import rs.volleybox.backend.database.DBBroker;
 import rs.volleybox.backend.so.SOInterface;
+import rs.volleybox.common_lib.domain.Player;
 import rs.volleybox.common_lib.domain.PlayerEngagement;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
+import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 
 /**
  *
@@ -22,7 +26,8 @@ public class SODeletePlayerEngagement implements SOInterface {
     @Override
     public Response execute(Object object) throws IOException {
         try {
-            PlayerEngagement engagement = (PlayerEngagement) object;
+            PlayerEngagement engagement = JsonSerializationUtils.convertValue(object, new TypeReference<PlayerEngagement>() {
+			});
             DBBroker.getInstance().deletePlayerEngagement(engagement);
             return new Response(ServerResponse.OK, null);
         } catch (SQLException ex) {
