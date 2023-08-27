@@ -13,8 +13,9 @@ import java.util.logging.Logger;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 
+import rs.volleybox.backend.database.DBBroker;
 import rs.volleybox.backend.server.Server;
-import rs.volleybox.backend.so.SOInterface;
+import rs.volleybox.backend.so.SOClass;
 import rs.volleybox.backend.so.impl.SOAddHall;
 import rs.volleybox.backend.so.impl.SOAddPlayer;
 import rs.volleybox.backend.so.impl.SOAddPlayerEngagement;
@@ -78,7 +79,7 @@ public class ClientThread extends Thread {
 				});
                 System.out.println(request);
                 Operation operation = request.getOperation();
-                SOInterface so = null;
+                SOClass so = null;
                 switch (operation) {
                     case LOGIN:
                         so = new SOLogin();
@@ -176,6 +177,7 @@ public class ClientThread extends Thread {
                         terminate();
                         break;
                 }
+                so.setDbbroker(DBBroker.getInstance());
                 Response response = so.execute(request.getObject());
                 if(status) {
                 	String jsonResponse = JsonSerializationUtils.serializeToJson(response, new TypeReference<Response>() {
@@ -184,7 +186,6 @@ public class ClientThread extends Thread {
                 }
                     
             } catch (IOException ex) {
-            	ex.printStackTrace();
                 status = false;
                 terminate();
                 interrupt();

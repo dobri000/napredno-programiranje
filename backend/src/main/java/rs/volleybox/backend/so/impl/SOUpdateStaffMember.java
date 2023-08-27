@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import rs.volleybox.backend.database.DBBroker;
-import rs.volleybox.backend.so.SOInterface;
+import rs.volleybox.backend.so.SOClass;
 import rs.volleybox.common_lib.domain.StaffMember;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
@@ -20,14 +20,14 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * @author HOME
  */
-public class SOUpdateStaffMember implements SOInterface {
+public class SOUpdateStaffMember extends SOClass {
 
     @Override
     public Response execute(Object object) throws IOException {
         try {
             StaffMember staff = JsonSerializationUtils.convertValue(object, new TypeReference<StaffMember>() {
 			});
-            DBBroker.getInstance().updateStaffMember(staff);
+            dbbroker.updateStaffMember(staff);
             return new Response(ServerResponse.OK, null);
         } catch (SQLException ex) {
             return new Response(ServerResponse.ERROR, "Cannot update staff member");

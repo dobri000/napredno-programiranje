@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import rs.volleybox.backend.database.DBBroker;
-import rs.volleybox.backend.so.SOInterface;
+import rs.volleybox.backend.so.SOClass;
 import rs.volleybox.common_lib.domain.Season;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
@@ -18,12 +18,12 @@ import rs.volleybox.common_lib.transfer.Response;
  *
  * @author HOME
  */
-public class SOGetAllSeasons implements SOInterface {
+public class SOGetAllSeasons extends SOClass {
 
     @Override
     public Response execute(Object object) throws IOException {
         try {
-            List<Season> seasons = DBBroker.getInstance().getAllSeasons();
+            List<Season> seasons = dbbroker.getAllSeasons();
             return new Response(ServerResponse.OK, seasons);
         } catch (SQLException ex) {
             return new Response(ServerResponse.ERROR, "Cannot return all seasons");

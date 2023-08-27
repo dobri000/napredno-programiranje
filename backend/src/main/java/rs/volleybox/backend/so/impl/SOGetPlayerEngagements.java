@@ -11,7 +11,7 @@ import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import rs.volleybox.backend.database.DBBroker;
-import rs.volleybox.backend.so.SOInterface;
+import rs.volleybox.backend.so.SOClass;
 import rs.volleybox.common_lib.domain.Player;
 import rs.volleybox.common_lib.domain.PlayerEngagement;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
@@ -22,14 +22,14 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * @author HOME
  */
-public class SOGetPlayerEngagements implements SOInterface {
+public class SOGetPlayerEngagements extends SOClass {
 
     @Override
     public Response execute(Object object) throws IOException {
         try {
             Player player = JsonSerializationUtils.convertValue(object, new TypeReference<Player>() {
 			});
-            List<PlayerEngagement> engagements = DBBroker.getInstance().getPlayerEngagements(player);
+            List<PlayerEngagement> engagements = dbbroker.getPlayerEngagements(player);
             return new Response(ServerResponse.OK, engagements);
         } catch (SQLException ex) {
             return new Response(ServerResponse.ERROR, "Cannot return player engagements");

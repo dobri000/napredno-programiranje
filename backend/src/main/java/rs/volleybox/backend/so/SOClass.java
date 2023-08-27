@@ -8,14 +8,24 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.sql.SQLException;
+
+import rs.volleybox.backend.database.DBBroker;
 import rs.volleybox.common_lib.transfer.Response;
 
 /**
  *
  * @author HOME
  */
-public interface SOInterface {
+public abstract class SOClass {
     
-    public Response execute(Object object) throws IOException;
+	protected DBBroker dbbroker;
+	
+    public abstract Response execute(Object object) throws IOException;
+
+	public void setDbbroker(DBBroker dbbroker) {
+		this.dbbroker = dbbroker;
+	}
+    
+    
     
 }
