@@ -19,6 +19,11 @@ class PlayerTest {
         Country nationality = new Country(1, "Serbia");
         player = new Player(2, "Filip", "Trifunovic", LocalDate.of(1999, 7, 11), 186, 69, 305, 300, Hand.RIGHT, nationality);
     }
+    
+    @AfterEach
+    public void tearDown() {
+    	player = null;
+    }
 
     @Test
     public void testGetPlayerId() {
