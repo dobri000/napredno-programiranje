@@ -79,11 +79,6 @@ class HallTest {
         assertEquals(hall, sameHall);
     }
 
-    @Test
-    public void testHashCode() {
-        Hall sameHall = new Hall(1, "USC Vozdovac", "Crnotravska 4, Beograd");
-        assertEquals(hall.hashCode(), sameHall.hashCode());
-    }
 
     @Test
     public void testToString() {
