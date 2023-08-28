@@ -31,7 +31,7 @@ public class SODeleteStaffMember extends SOClass {
             dbbroker.deleteStaffMember(staff);
             return new Response(ServerResponse.OK, null);
         } catch (SQLException ex) {
-            return new Response(ServerResponse.ERROR, "Staff memeber not successfully deleted");
+            return new Response(ServerResponse.ERROR, "Staff member not successfully deleted");
         }
     }
     
