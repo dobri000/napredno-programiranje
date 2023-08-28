@@ -45,7 +45,7 @@ class SOSearchPlayersTest extends SOClassTest {
         verify(dbb, times(1)).getPlayersByFirstnameOrLastname(any(String.class));
 
         assertEquals(ServerResponse.OK, response.getServerResponse());
-        assertEquals(players, (List<Hall>) response.getObject());
+        assertEquals(players, (List<Player>) response.getObject());
     }
 
     @Test
