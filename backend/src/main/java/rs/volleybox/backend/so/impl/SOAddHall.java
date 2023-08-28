@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import rs.volleybox.backend.database.DBBroker;
-import rs.volleybox.backend.so.SOInterface;
+import rs.volleybox.backend.so.SOClass;
 import rs.volleybox.common_lib.domain.Hall;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
@@ -26,14 +26,14 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * @author HOME
  */
-public class SOAddHall implements SOInterface {
+public class SOAddHall extends SOClass {
 
     @Override
     public Response execute(Object object) throws IOException {
         try {
             Hall hall = JsonSerializationUtils.convertValue(object, new TypeReference<Hall>() {
 			});
-            DBBroker.getInstance().addHall(hall);
+            dbbroker.addHall(hall);
             return new Response(ServerResponse.OK, null);
         } catch (SQLException ex) {
             return new Response(ServerResponse.ERROR, "Hall not successfully added");

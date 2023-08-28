@@ -36,6 +36,9 @@ public class Roster implements Serializable {
     }
 
     public void setTeam(Team team) {
+    	if(team == null) {
+    		throw new NullPointerException("Team cannot be null");
+    	}
         this.team = team;
     }
 
@@ -52,6 +55,9 @@ public class Roster implements Serializable {
     }
 
     public void setSeason(Season season) {
+    	if(season == null) {
+    		throw new NullPointerException("Season cannot be null");
+    	}
         this.season = season;
     }
 

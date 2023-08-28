@@ -40,6 +40,12 @@ public class Country implements Serializable{
     }
 
     public void setCountryName(String countryName) {
+    	if(countryName == null) {
+    		throw new NullPointerException("Country name cannot be null");
+    	}
+    	if(countryName.isEmpty()) {
+    		throw new IllegalArgumentException("Country name cannot be empty");
+    	}
         this.countryName = countryName;
     }
 

@@ -50,6 +50,12 @@ public class Team implements Serializable{
     }
 
     public void setTeamName(String teamName) {
+    	if(teamName == null) {
+    		throw new NullPointerException("Team name cannot be null");
+    	}
+    	if(teamName.isEmpty()) {
+    		throw new IllegalArgumentException("Team name cannot be empty");
+    	}
         this.teamName = teamName;
     }
 
@@ -58,6 +64,9 @@ public class Team implements Serializable{
     }
 
     public void setFounded(int founded) {
+    	if(founded < 0) {
+    		throw new IllegalArgumentException("Founded cannot be less then zero");
+    	}
         this.founded = founded;
     }
 
@@ -66,6 +75,9 @@ public class Team implements Serializable{
     }
 
     public void setCountry(Country country) {
+    	if(country == null) {
+    		throw new NullPointerException("Country cannot be null");
+    	}
         this.country = country;
     }
 
@@ -74,6 +86,9 @@ public class Team implements Serializable{
     }
 
     public void setHall(Hall hall) {
+    	if(hall == null) {
+    		throw new NullPointerException("Hall cannot be null");
+    	}
         this.hall = hall;
     }
     

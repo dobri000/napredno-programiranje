@@ -43,6 +43,12 @@ public class Hall implements Serializable{
     }
 
     public void setHallName(String hallName) {
+    	if(hallName == null) {
+    		throw new NullPointerException("Hall name cannot be null");
+    	}
+    	if(hallName.isEmpty()) {
+    		throw new IllegalArgumentException("Hall name cannot be empty");
+    	}
         this.hallName = hallName;
     }
 
@@ -51,6 +57,12 @@ public class Hall implements Serializable{
     }
 
     public void setAddress(String address) {
+    	if(address == null) {
+    		throw new NullPointerException("Address cannot be null");
+    	}
+    	if(address.isEmpty()) {
+    		throw new IllegalArgumentException("Address cannot be empty");
+    	}
         this.address = address;
     }
 

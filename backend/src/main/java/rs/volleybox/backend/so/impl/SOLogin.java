@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import rs.volleybox.backend.database.DBBroker;
-import rs.volleybox.backend.so.SOInterface;
+import rs.volleybox.backend.so.SOClass;
 import rs.volleybox.common_lib.domain.Admin;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
@@ -20,14 +20,14 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * @author HOME
  */
-public class SOLogin implements SOInterface {
+public class SOLogin extends SOClass {
 
     @Override
     public Response execute(Object object) throws IOException {
         try {
             Admin admin = JsonSerializationUtils.convertValue(object, new TypeReference<Admin>() {
 			});
-            String success = DBBroker.getInstance().login(admin);
+            String success = dbbroker.login(admin);
             if(success.equals("Correct credentials")){
                 return new Response(ServerResponse.OK, success);
             } else {

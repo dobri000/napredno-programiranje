@@ -11,7 +11,7 @@ import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import rs.volleybox.backend.database.DBBroker;
-import rs.volleybox.backend.so.SOInterface;
+import rs.volleybox.backend.so.SOClass;
 import rs.volleybox.common_lib.domain.Player;
 import rs.volleybox.common_lib.domain.StaffMember;
 import rs.volleybox.common_lib.domain.StaffMemberEngagement;
@@ -23,14 +23,14 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * @author HOME
  */
-public class SOGetStaffMemberEngagements implements SOInterface {
+public class SOGetStaffMemberEngagements extends SOClass {
 
     @Override
     public Response execute(Object object) throws IOException {
         try {
             StaffMember staff = JsonSerializationUtils.convertValue(object, new TypeReference<StaffMember>() {
 			});
-            List<StaffMemberEngagement> engagements = DBBroker.getInstance().getStaffMemberEngagements(staff);
+            List<StaffMemberEngagement> engagements = dbbroker.getStaffMemberEngagements(staff);
             return new Response(ServerResponse.OK, engagements);
         } catch (SQLException ex) {
             return new Response(ServerResponse.ERROR, "Cannot return staff member engagements");

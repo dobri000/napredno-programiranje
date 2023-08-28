@@ -66,6 +66,12 @@ public class Player implements Serializable{
     }
 
     public void setFirstname(String firstname) {
+    	if(firstname == null) {
+    		throw new NullPointerException("Firstname cannot be null");
+    	}
+    	if(firstname.isEmpty()) {
+    		throw new IllegalArgumentException("Firstname cannot be empty");
+    	}
         this.firstname = firstname;
     }
 
@@ -74,6 +80,12 @@ public class Player implements Serializable{
     }
 
     public void setLastname(String lastname) {
+    	if(lastname == null) {
+    		throw new NullPointerException("Lastname cannot be null");
+    	}
+    	if(lastname.isEmpty()) {
+    		throw new IllegalArgumentException("Lastname cannot be empty");
+    	}
         this.lastname = lastname;
     }
 
@@ -82,6 +94,9 @@ public class Player implements Serializable{
     }
 
     public void setBirthdate(LocalDate birthdate) {
+    	if(birthdate == null) {
+    		throw new NullPointerException("Birthdate cannot be null");
+    	}
         this.birthdate = birthdate;
     }
 
@@ -90,6 +105,9 @@ public class Player implements Serializable{
     }
 
     public void setHeight(int height) {
+    	if(height < 0) {
+    		throw new IllegalArgumentException("Height cannot be less then zero");
+    	}
         this.height = height;
     }
 
@@ -98,6 +116,9 @@ public class Player implements Serializable{
     }
 
     public void setWeight(int weight) {
+    	if(weight < 0) {
+    		throw new IllegalArgumentException("Weight cannot be less then zero");
+    	}
         this.weight = weight;
     }
 
@@ -106,6 +127,9 @@ public class Player implements Serializable{
     }
 
     public void setSpike(int spike) {
+    	if(spike < 0) {
+    		throw new IllegalArgumentException("Spike cannot be less then zero");
+    	}
         this.spike = spike;
     }
 
@@ -114,6 +138,9 @@ public class Player implements Serializable{
     }
 
     public void setBlock(int block) {
+    	if(block < 0) {
+    		throw new IllegalArgumentException("Block cannot be less then zero");
+    	}
         this.block = block;
     }
 
@@ -122,6 +149,9 @@ public class Player implements Serializable{
     }
 
     public void setDominantHand(Hand dominantHand) {
+    	if(dominantHand == null) {
+    		throw new NullPointerException("Dominant hand cannot be null");
+    	}
         this.dominantHand = dominantHand;
     }
 
@@ -130,6 +160,9 @@ public class Player implements Serializable{
     }
 
     public void setNationality(Country nationality) {
+    	if(nationality == null) {
+    		throw new NullPointerException("Nationality cannot be null");
+    	}
         this.nationality = nationality;
     }
 

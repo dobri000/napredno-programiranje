@@ -9,7 +9,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import rs.volleybox.backend.database.DBBroker;
-import rs.volleybox.backend.so.SOInterface;
+import rs.volleybox.backend.so.SOClass;
 import rs.volleybox.common_lib.domain.Admin;
 import rs.volleybox.common_lib.domain.Player;
 import rs.volleybox.common_lib.transfer.Response;
@@ -19,13 +19,13 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * @author HOME
  */
-public class SOQuit implements SOInterface {
+public class SOQuit extends SOClass {
 
     @Override
     public Response execute(Object object) throws IOException {
         Admin admin = JsonSerializationUtils.convertValue(object, new TypeReference<Admin>() {
 		});
-        DBBroker.getInstance().logout(admin);
+        dbbroker.logout(admin);
         return null;
     }
     

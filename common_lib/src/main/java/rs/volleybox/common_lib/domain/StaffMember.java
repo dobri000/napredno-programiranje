@@ -50,6 +50,12 @@ public class StaffMember implements Serializable{
     }
 
     public void setFirstname(String firstname) {
+    	if(firstname == null) {
+    		throw new NullPointerException("Firstname cannot be null");
+    	}
+    	if(firstname.isEmpty()) {
+    		throw new IllegalArgumentException("Firstname cannot be empty");
+    	}
         this.firstname = firstname;
     }
 
@@ -58,6 +64,12 @@ public class StaffMember implements Serializable{
     }
 
     public void setLastname(String lastname) {
+    	if(lastname == null) {
+    		throw new NullPointerException("Lastname cannot be null");
+    	}
+    	if(lastname.isEmpty()) {
+    		throw new IllegalArgumentException("Lastname cannot be empty");
+    	}
         this.lastname = lastname;
     }
 
@@ -66,6 +78,9 @@ public class StaffMember implements Serializable{
     }
 
     public void setBirthdate(LocalDate birthdate) {
+    	if(birthdate == null) {
+    		throw new NullPointerException("Birthdate cannot be null");
+    	}
         this.birthdate = birthdate;
     }
 
@@ -74,6 +89,9 @@ public class StaffMember implements Serializable{
     }
 
     public void setNationality(Country nationality) {
+    	if(nationality == null) {
+    		throw new NullPointerException("Nationality cannot be null");
+    	}
         this.nationality = nationality;
     }
 
