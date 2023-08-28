@@ -1,11 +1,8 @@
 package rs.volleybox.backend.so;
 
 import org.junit.jupiter.api.Test;
-import rs.volleybox.backend.so.impl.SOAddPlayerEngagement;
 import rs.volleybox.backend.so.impl.SOAddStaffMemberEngagement;
 import rs.volleybox.common_lib.domain.*;
-import rs.volleybox.common_lib.enumeration.Hand;
-import rs.volleybox.common_lib.enumeration.PlayerPosition;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.enumeration.StaffMemberPosition;
 import rs.volleybox.common_lib.transfer.Response;
@@ -18,7 +15,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 
-class SOAddStaffMemberTest extends SOClassTest {
+class SOAddStaffMemberEngagementTest extends SOClassTest {
 
     @Override
     protected void createSO() {
