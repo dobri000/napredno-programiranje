@@ -44,10 +44,11 @@ public class Server {
 
     public void stop() throws IOException {
         for (ClientThread client : clients) {
-            client.terminate();
+            client.serverStop();
             client.interrupt();
         }
         ss.close();
+        clients.clear();
     }
 
     public static void removeClient(ClientThread client) {

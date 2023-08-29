@@ -77,7 +77,6 @@ public class ClientThread extends Thread {
             	System.out.println(jsonRequest);
                 Request request = JsonSerializationUtils.deserializeFromJson(jsonRequest, new TypeReference<Request>() {
 				});
-                System.out.println(request);
                 Operation operation = request.getOperation();
                 SOClass so = null;
                 switch (operation) {
@@ -182,6 +181,7 @@ public class ClientThread extends Thread {
                 if(status) {
                 	String jsonResponse = JsonSerializationUtils.serializeToJson(response, new TypeReference<Response>() {
 					});
+                    System.out.println(jsonResponse);
                 	out.writeObject(jsonResponse);
                 }
                     
@@ -202,6 +202,16 @@ public class ClientThread extends Thread {
             out.close();
             socket.close();
             Server.removeClient(this);
+        } catch (IOException ex) {
+            Logger.getLogger(ClientThread.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void serverStop() {
+        try {
+            in.close();
+            out.close();
+            socket.close();
         } catch (IOException ex) {
             Logger.getLogger(ClientThread.class.getName()).log(Level.SEVERE, null, ex);
         }
