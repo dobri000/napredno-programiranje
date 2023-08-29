@@ -17,21 +17,31 @@ import rs.volleybox.common_lib.transfer.Response;
 import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 
 /**
+ * This class represents a system operation for logging out an admin user from the system.
+ * The system operation handles the process of ending an admin user's session and invalidating their authentication.
  *
  * @author HOME
  */
 public class SOLogout extends SOClass {
 
+    /**
+     * Executes the system operation to log out an admin user from the system.
+     *
+     * @param object The admin object for which the logout is requested.
+     * @return A {@link Response} indicating the result of the logout attempt.
+     *         If the logout is successful, the response will have status {@link ServerResponse#OK} and a success message.
+     *         If the logout fails, the response will have status {@link ServerResponse#ERROR} and an error message.
+     * @throws IOException If there is an issue with input/output during JSON conversion.
+     */
     @Override
     public Response execute(Object object) throws IOException {
-        Admin admin = JsonSerializationUtils.convertValue(object, new TypeReference<Admin>() {
-		});
+        Admin admin = JsonSerializationUtils.convertValue(object, new TypeReference<Admin>() {});
         boolean success = dbbroker.logout(admin);
-        if(success) {
+        if (success) {
             return new Response(ServerResponse.OK, "Successfully logged out");
         } else {
             return new Response(ServerResponse.ERROR, "Admin cannot log out");
         }
     }
-    
 }
+
