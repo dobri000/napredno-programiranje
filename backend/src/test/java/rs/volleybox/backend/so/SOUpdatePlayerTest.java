@@ -47,7 +47,7 @@ class SOUpdatePlayerTest extends SOClassTest {
         verify(dbb, times(1)).updatePlayer(any(Player.class));
 
         assertEquals(ServerResponse.ERROR, response.getServerResponse());
-        assertEquals("Cannot update player", (String) response.getObject());
+        assertEquals("Cannot update player information", (String) response.getObject());
     }
 
 }

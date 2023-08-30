@@ -57,7 +57,7 @@ class SOSearchPlayersTest extends SOClassTest {
         verify(dbb, times(1)).getPlayersByFirstnameOrLastname(any(String.class));
 
         assertEquals(ServerResponse.ERROR, response.getServerResponse());
-        assertEquals("Cannot return players for by given name", (String) response.getObject());
+        assertEquals("Cannot return players by the given name", (String) response.getObject());
     }
 
 }

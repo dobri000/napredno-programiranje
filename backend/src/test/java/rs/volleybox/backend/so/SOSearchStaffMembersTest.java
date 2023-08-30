@@ -55,7 +55,7 @@ class SOSearchStaffMembersTest extends SOClassTest {
         verify(dbb, times(1)).getStaffMembersByFirstnameOrLastname(any(String.class));
 
         assertEquals(ServerResponse.ERROR, response.getServerResponse());
-        assertEquals("Cannot return staff members for by given name", (String) response.getObject());
+        assertEquals("Cannot return staff members by the given name", (String) response.getObject());
     }
 
 }

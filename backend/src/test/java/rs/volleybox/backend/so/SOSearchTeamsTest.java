@@ -52,7 +52,7 @@ class SOSearchTeamsTest extends SOClassTest {
         verify(dbb, times(1)).searchTeam(any(String.class));
 
         assertEquals(ServerResponse.ERROR, response.getServerResponse());
-        assertEquals("Cannot return teams for by given name", (String) response.getObject());
+        assertEquals("Cannot return teams by the given name", (String) response.getObject());
     }
 
 }

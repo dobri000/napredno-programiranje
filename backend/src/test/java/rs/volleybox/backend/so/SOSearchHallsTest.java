@@ -49,7 +49,7 @@ class SOSearchHallsTest extends SOClassTest {
         verify(dbb, times(1)).findHallsSearch(any(String.class));
 
         assertEquals(ServerResponse.ERROR, response.getServerResponse());
-        assertEquals("Cannot return halls for by given name", (String) response.getObject());
+        assertEquals("Cannot return halls by the given name", (String) response.getObject());
     }
 
 }

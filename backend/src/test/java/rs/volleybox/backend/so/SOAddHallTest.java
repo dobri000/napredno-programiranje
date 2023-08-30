@@ -5,12 +5,14 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import org.junit.jupiter.api.Test;
 
 import rs.volleybox.backend.so.impl.SOAddHall;
 import rs.volleybox.common_lib.domain.Hall;
 import rs.volleybox.common_lib.enumeration.ServerResponse;
 import rs.volleybox.common_lib.transfer.Response;
+import rs.volleybox.common_lib.utils.JsonSerializationUtils;
 
 import java.sql.SQLException;
 

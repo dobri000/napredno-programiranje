@@ -46,7 +46,7 @@ class SOUpdateTeamTest extends SOClassTest {
         verify(dbb, times(1)).updateTeam(any(Team.class));
 
         assertEquals(ServerResponse.ERROR, response.getServerResponse());
-        assertEquals("Cannot update team", (String) response.getObject());
+        assertEquals("Cannot update team information", (String) response.getObject());
     }
 
 }

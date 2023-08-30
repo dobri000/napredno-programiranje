@@ -46,7 +46,7 @@ class SOUpdateStaffMemberTest extends SOClassTest {
         verify(dbb, times(1)).updateStaffMember(any(StaffMember.class));
 
         assertEquals(ServerResponse.ERROR, response.getServerResponse());
-        assertEquals("Cannot update staff member", (String) response.getObject());
+        assertEquals("Cannot update staff member information", (String) response.getObject());
     }
 
 }
