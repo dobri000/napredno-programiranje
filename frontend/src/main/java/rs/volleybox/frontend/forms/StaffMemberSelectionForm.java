@@ -12,7 +12,7 @@ import rs.volleybox.frontend.models.StaffMembersTableModel;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class StaffMemberSelectionForm extends javax.swing.JDialog {
     

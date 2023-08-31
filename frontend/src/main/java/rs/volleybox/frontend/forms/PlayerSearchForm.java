@@ -13,7 +13,7 @@ import rs.volleybox.frontend.models.PlayersTableModel;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class PlayerSearchForm extends javax.swing.JDialog {
 

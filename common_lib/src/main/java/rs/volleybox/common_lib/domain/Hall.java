@@ -13,7 +13,7 @@ import java.io.Serializable;
  *
  * The class implements the Serializable interface to support serialization.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class Hall implements Serializable {
 

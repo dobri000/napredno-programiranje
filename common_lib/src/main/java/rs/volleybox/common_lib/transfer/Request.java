@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Represents a request to perform an operation on an object. This class contains an operation type and an object on which the operation should be performed.
  * Used for communication between client and server components.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class Request implements Serializable {
 

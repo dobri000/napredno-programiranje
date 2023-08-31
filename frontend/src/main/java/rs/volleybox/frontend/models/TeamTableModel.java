@@ -12,7 +12,7 @@ import rs.volleybox.common_lib.domain.Team;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class TeamTableModel extends AbstractTableModel {
 

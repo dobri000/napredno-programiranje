@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * The class is Serializable to allow for object serialization.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class Season implements Serializable {
 

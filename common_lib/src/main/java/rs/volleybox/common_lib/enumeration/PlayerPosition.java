@@ -6,7 +6,7 @@ package rs.volleybox.common_lib.enumeration;
 
 /**
  *
- * @author HOME
+ * @author Dimitrije
  */
 public enum PlayerPosition {
     SETTER, OPPOSITE, OUTSIDE_HITTER, MIDDLE_BLOCKER, LIBERO;

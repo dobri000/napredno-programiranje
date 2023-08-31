@@ -24,7 +24,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * The search term is used to find halls with names that starts with the search text.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOSearchHalls extends SOClass {
 

@@ -11,7 +11,7 @@ import java.time.LocalDate;
  *
  * The class is Serializable to allow for object serialization.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class StaffMember implements Serializable{
 

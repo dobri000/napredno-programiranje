@@ -13,7 +13,7 @@ import rs.volleybox.frontend.models.StaffMembersTableModel;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class StaffMemberSearchForm extends javax.swing.JDialog {
 

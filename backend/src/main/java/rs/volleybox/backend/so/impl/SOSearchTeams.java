@@ -23,7 +23,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * The search term is used to find teams with names or codes that contain or closely match the search text.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOSearchTeams extends SOClass {
 

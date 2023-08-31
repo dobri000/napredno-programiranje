@@ -18,7 +18,7 @@ import java.util.Objects;
  *
  * The class implements the Serializable interface to support serialization.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class Admin implements Serializable {
 

@@ -14,7 +14,7 @@ import rs.volleybox.backend.threads.ClientThread;
 
 /**
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class Server {
 

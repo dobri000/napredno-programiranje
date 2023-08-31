@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Represents a response sent from the server to the client.
  * Contains information about the server response and an associated object.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class Response implements Serializable{
 

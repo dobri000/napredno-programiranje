@@ -12,7 +12,7 @@ import rs.volleybox.frontend.models.TeamTableModel;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class TeamSearchForm extends javax.swing.JDialog {
 

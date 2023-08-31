@@ -17,7 +17,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
  *
  * Note: Make sure to include Jackson library in your project dependencies.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class JsonSerializationUtils {
 

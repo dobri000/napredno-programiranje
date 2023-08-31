@@ -17,7 +17,7 @@ import rs.volleybox.common_lib.enumeration.*;
 
 /**
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class DBBroker {
 

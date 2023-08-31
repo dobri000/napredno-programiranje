@@ -36,7 +36,7 @@ import rs.volleybox.frontend.session.Session;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class Communication {
 

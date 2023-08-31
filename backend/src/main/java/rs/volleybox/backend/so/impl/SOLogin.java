@@ -16,7 +16,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  * This class represents a system operation for authenticating an admin user's login credentials.
  * The system operation handles the process of validating the provided admin credentials using the provided DBBroker.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOLogin extends SOClass {
 

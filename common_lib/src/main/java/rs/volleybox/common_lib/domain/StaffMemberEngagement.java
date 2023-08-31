@@ -8,7 +8,7 @@ import java.util.Objects;
  * Represents the engagement of a staff member with a roster in a specific position.
  * This class contains information about the staff member, the roster, and their position.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class StaffMemberEngagement implements Serializable{
 

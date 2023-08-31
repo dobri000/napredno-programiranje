@@ -14,7 +14,7 @@ import rs.volleybox.backend.threads.ServerThread;
 
 /**
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class ServerForm extends javax.swing.JFrame {
 

@@ -13,7 +13,7 @@ import rs.volleybox.common_lib.domain.StaffMember;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class StaffMembersTableModel extends AbstractTableModel {
 

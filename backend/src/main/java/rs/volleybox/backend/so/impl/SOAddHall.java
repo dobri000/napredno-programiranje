@@ -27,7 +27,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  * Implements the {@link SOClass} abstract class and defines the behavior for adding a new hall.
  * The {@link #execute(Object)} method is overridden to perform the hall addition operation.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOAddHall extends SOClass {
 

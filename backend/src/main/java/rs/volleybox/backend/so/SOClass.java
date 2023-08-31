@@ -15,7 +15,7 @@ import rs.volleybox.common_lib.transfer.Response;
  * Additionally, this class allows setting instances of the DBBroker to be used
  * in the execution of system operations.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public abstract class SOClass {
 

@@ -14,7 +14,7 @@ import rs.volleybox.common_lib.domain.Season;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class PlayerEngagementsTeamModel extends AbstractTableModel {
 

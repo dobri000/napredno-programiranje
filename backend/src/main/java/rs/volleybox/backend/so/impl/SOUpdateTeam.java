@@ -20,7 +20,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  * This class represents a system operation for updating team information in the database.
  * The system operation updates the information of the provided team object in the database.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOUpdateTeam extends SOClass {
 

@@ -13,7 +13,7 @@ import java.util.Objects;
  *
  * The class is Serializable to allow for object serialization.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class Roster implements Serializable {
 

@@ -14,7 +14,7 @@ import rs.volleybox.common_lib.transfer.Response;
  * This class represents a system operation for retrieving a list of all players from the database.
  * The system operation handles the process of fetching the list of players using the provided DBBroker.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOGetAllPlayers extends SOClass {
 

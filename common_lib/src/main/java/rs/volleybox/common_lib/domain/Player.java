@@ -21,7 +21,7 @@ import java.time.LocalDate;
  *
  * The class implements the Serializable interface to support serialization.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class Player implements Serializable{
 

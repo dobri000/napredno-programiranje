@@ -17,7 +17,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  * The team to be deleted is specified in the input object, and the system operation
  * handles the process of removing the team from the database using the provided DBBroker.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SODeleteTeam extends SOClass {
 

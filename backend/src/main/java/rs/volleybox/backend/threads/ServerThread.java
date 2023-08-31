@@ -11,7 +11,7 @@ import rs.volleybox.backend.server.Server;
 
 /**
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class ServerThread extends Thread {
     

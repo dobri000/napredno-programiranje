@@ -54,7 +54,7 @@ import rs.volleybox.common_lib.enumeration.Operation;
 
 /**
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class ClientThread extends Thread {
 

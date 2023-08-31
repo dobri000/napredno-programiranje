@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class DBConnectionFactory {
     private Connection connection;

@@ -17,7 +17,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  * The player engagement to be deleted is specified in the input object, and the system operation
  * handles the process of removing the player engagement from the database using the provided DBBroker.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SODeletePlayerEngagement extends SOClass {
 

@@ -12,7 +12,7 @@ import rs.volleybox.common_lib.domain.PlayerEngagement;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class PlayerEngagementsTableModel extends AbstractTableModel {
     

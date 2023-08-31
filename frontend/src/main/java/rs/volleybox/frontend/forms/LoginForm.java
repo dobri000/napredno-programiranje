@@ -13,7 +13,7 @@ import rs.volleybox.frontend.session.Session;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class LoginForm extends javax.swing.JFrame {
 

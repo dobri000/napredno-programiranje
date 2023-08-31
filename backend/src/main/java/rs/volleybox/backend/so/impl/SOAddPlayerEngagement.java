@@ -19,7 +19,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * A player engagement typically includes information about the player, roster, position, and number.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOAddPlayerEngagement extends SOClass {
 

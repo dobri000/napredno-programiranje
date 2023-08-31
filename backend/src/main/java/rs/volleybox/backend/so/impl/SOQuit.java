@@ -19,7 +19,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  * This class represents a system operation for quitting the system, effectively logging out an admin user.
  * The system operation handles the process of ending an admin user's session and invalidating their authentication.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOQuit extends SOClass {
 

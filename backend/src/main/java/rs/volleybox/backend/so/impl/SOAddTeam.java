@@ -17,7 +17,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  * The team details are provided in the input object, and the system operation handles
  * the process of adding the team to the database using the provided DBBroker.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOAddTeam extends SOClass {
 

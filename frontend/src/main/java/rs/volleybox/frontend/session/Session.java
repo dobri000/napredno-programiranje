@@ -8,7 +8,7 @@ import rs.volleybox.common_lib.domain.Admin;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class Session {
     

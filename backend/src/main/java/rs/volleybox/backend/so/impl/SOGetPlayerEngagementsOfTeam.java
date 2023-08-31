@@ -18,7 +18,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  * This class represents a system operation for retrieving a list of player engagements associated with a specific team from the database.
  * The system operation handles the process of fetching the engagements of players associated with a specific team using the provided DBBroker.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOGetPlayerEngagementsOfTeam extends SOClass {
 

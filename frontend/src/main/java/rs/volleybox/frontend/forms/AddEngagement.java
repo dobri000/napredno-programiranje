@@ -8,7 +8,7 @@ import rs.volleybox.common_lib.domain.Team;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public interface AddEngagement {
     public void setTeam(Team team);

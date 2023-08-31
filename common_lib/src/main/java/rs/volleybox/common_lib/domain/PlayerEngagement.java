@@ -8,7 +8,7 @@ import java.util.Objects;
  * Represents an engagement of a player in a specific roster and position.
  * It contains information about the player, roster, position, and jersey number.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class PlayerEngagement implements Serializable{
 

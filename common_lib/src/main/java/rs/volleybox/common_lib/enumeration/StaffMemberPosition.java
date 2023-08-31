@@ -6,7 +6,7 @@ package rs.volleybox.common_lib.enumeration;
 
 /**
  *
- * @author HOME
+ * @author Dimitrije
  */
 public enum StaffMemberPosition {
     HEAD_COACH, COACH_ASSISTANT, STATISTICIAN, PHYSICAL_PREPARATION_COACH, TEAM_MANAGER;

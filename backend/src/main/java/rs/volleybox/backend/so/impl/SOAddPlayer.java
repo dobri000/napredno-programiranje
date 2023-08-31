@@ -19,7 +19,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  * The player details are provided in the input object, and the system operation
  * handles the process of adding the player to the database using the provided DBBroker.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOAddPlayer extends SOClass {
 

@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Represents a volleyball team with its attributes such as team name, foundation year, country, and home hall.
  * This class provides methods to access and modify team information.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class Team implements Serializable{
     /**

@@ -14,7 +14,7 @@ import rs.volleybox.common_lib.transfer.Response;
  * This class represents a system operation for retrieving a list of all staff members from the database.
  * The system operation handles the process of fetching the list of staff members using the provided DBBroker.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOGetAllStaffMembers extends SOClass {
 

@@ -23,7 +23,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * The search term is used to find staff members with first names or last names that contain or closely match the search text.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOSearchStaffMembers extends SOClass {
 

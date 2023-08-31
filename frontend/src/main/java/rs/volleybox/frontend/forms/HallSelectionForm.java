@@ -12,7 +12,7 @@ import rs.volleybox.frontend.models.HallsTableModel;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class HallSelectionForm extends javax.swing.JDialog {
     

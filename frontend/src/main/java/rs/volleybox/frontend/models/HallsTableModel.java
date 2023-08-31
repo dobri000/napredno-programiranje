@@ -12,7 +12,7 @@ import rs.volleybox.common_lib.domain.Hall;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class HallsTableModel extends AbstractTableModel {
 

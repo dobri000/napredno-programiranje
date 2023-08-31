@@ -20,7 +20,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  * This class represents a system operation for logging out an admin user from the system.
  * The system operation handles the process of ending an admin user's session and invalidating their authentication.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOLogout extends SOClass {
 

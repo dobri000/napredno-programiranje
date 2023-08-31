@@ -12,7 +12,7 @@ import rs.volleybox.frontend.session.Session;
 
 /**
  *
- * @author HOME
+ * @author
  */
 public class HomeForm extends javax.swing.JFrame {
 

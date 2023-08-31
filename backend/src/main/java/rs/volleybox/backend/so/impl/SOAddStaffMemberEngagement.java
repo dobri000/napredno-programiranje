@@ -19,7 +19,7 @@ import rs.volleybox.common_lib.utils.JsonSerializationUtils;
  *
  * A staff member engagement typically includes information about the staff member, roster, and position.
  *
- * @author HOME
+ * @author Dimitrije
  */
 public class SOAddStaffMemberEngagement extends SOClass {
 
